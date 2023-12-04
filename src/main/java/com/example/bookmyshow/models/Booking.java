@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
@@ -28,6 +29,7 @@ public class Booking extends BaseModel{
     private BookingStatus bookingStatus;
 
     @ManyToOne
+    @CreatedBy
     private User user;
     private int price;
     private Date timeOfBooking;
